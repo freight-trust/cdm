@@ -1,0 +1,19 @@
+namespace cdm.base.staticdata.party
+version "2.57.2"
+
+import cdm.base.*
+
+func Create_PartyRole: <"Constructs a PartyRole given a party and party role enumeration value.">
+	inputs:
+		party Party(1..1)
+		role PartyRoleEnum(1..1)
+	output:
+		partyRole PartyRole (1..1)
+
+	assign-output partyRole -> partyReference:
+		party
+		
+	assign-output partyRole -> role:
+		role
+
+ 
